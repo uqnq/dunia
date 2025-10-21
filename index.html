@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunia - Portal Alam Semesta dan Energi Spiritual</title>
+    <style>
+        /* Reset dan variabel */
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --text: #f1f1f1;
+            --text-secondary: #b8b8b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header dan navigasi */
+        header {
+            background-color: rgba(10, 10, 20, 0.9);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--highlight);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--highlight);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            background: linear-gradient(rgba(10, 10, 20, 0.8), rgba(10, 10, 20, 0.9)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a2e"/><circle cx="20" cy="20" r="1" fill="white" opacity="0.7"/><circle cx="50" cy="40" r="0.5" fill="white" opacity="0.5"/><circle cx="80" cy="30" r="0.7" fill="white" opacity="0.6"/><circle cx="40" cy="70" r="0.8" fill="white" opacity="0.8"/><circle cx="70" cy="60" r="0.6" fill="white" opacity="0.4"/><circle cx="10" cy="90" r="0.9" fill="white" opacity="0.9"/></svg>');
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--highlight), #ff7b9c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--highlight);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #ff2e63;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+        }
+        
+        /* Section utama */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--highlight);
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .content-card {
+            background-color: var(--secondary);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Quote section */
+        .quote-section {
+            background-color: var(--accent);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+        }
+        
+        .quote-author {
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0d0d1a;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            color: var(--highlight);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: var(--highlight);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Animasi bintang */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary);
+                padding: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Dunia</a>
+            <div class="nav-links">
+                <a href="#">Beranda</a>
+                <a href="#">Alam Semesta</a>
+                <a href="#">Energi Spiritual</a>
+                <a href="#">Meditasi</a>
+                <a href="#">Artikel</a>
+                <a href="#">Tentang Kami</a>
+            </div>
+            <div class="mobile-menu">☰</div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Dunia</h1>
+            <p>Portal pengetahuan tentang alam semesta, energi spiritual, dan segala yang terkait. Jelajahi misteri kosmos dan kekuatan batin yang membentuk realitas kita.</p>
+            <a href="#" class="cta-button">Mulai Perjalanan Spiritual</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Eksplorasi Dunia</h2>
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-icon">🌌</div>
+                <h3 class="card-title">Misteri Alam Semesta</h3>
+                <p>Dari lubang hitam hingga multiverse, jelajahi rahasia kosmos yang belum terpecahkan. Bagaimana alam semesta dimulai? Apakah kita sendirian? Temukan jawaban dan teori terbaru dalam astrofisika.</p>
+            </div>
+            <div class="content-card">
+                <div class="card-icon">🧘</div>
+                <h3 class="card-title">Energi Spiritual</h3>
+                <p>Pahami kekuatan energi spiritual yang mengalir dalam diri kita semua. Pelajari tentang chakra, aura, meditasi, dan teknik untuk meningkatkan kesadaran spiritual Anda.</p>
+            </div>
+            <div class="content-card">
+                <div class="card-icon">🔮</div>
+                <h3 class="card-title">Hukum Universal</h3>
+                <p>Eksplorasi hukum-hukum universal yang mengatur kehidupan dan alam semesta. Dari hukum tarik-menarik hingga sinkronisitas, pahami bagaimana energi bekerja dalam hidup kita.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="quote">
+            "Kita bukanlah manusia yang mengalami pengalaman spiritual, tetapi makhluk spiritual yang mengalami kehidupan manusia."
+            <div class="quote-author">- Pierre Teilhard de Chardin</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Tentang Dunia</h2>
+        <div class="content-grid">
+            <div class="content-card">
+                <h3 class="card-title">Visi Kami</h3>
+                <p>Dunia didirikan dengan visi untuk menjadi jembatan antara sains dan spiritualitas. Kami percaya bahwa pemahaman tentang alam semesta dan kesadaran spiritual adalah dua sisi dari koin yang sama. Melalui konten yang mendalam dan mudah dipahami, kami bertujuan untuk membantu pembaca menemukan harmoni antara pengetahuan ilmiah dan kebijaksanaan spiritual.</p>
+            </div>
+            <div class="content-card">
+                <h3 class="card-title">Misi Kami</h3>
+                <p>Misi kami adalah menyediakan platform yang komprehensif untuk mengeksplorasi berbagai aspek realitas - dari partikel subatom hingga galaksi yang jauh, dari pikiran bawah sadar hingga kesadaran kosmik. Kami berkomitmen untuk menyajikan informasi yang akurat, inspiratif, dan transformatif yang dapat membantu setiap individu dalam perjalanan penemuan diri dan pemahaman alam semesta.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tentang Dunia</h3>
+                <p>Portal pengetahuan tentang alam semesta, energi spiritual, dan segala yang terkait. Menjembatani sains dan spiritualitas untuk pemahaman yang lebih holistik tentang realitas.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kategori</h3>
+                <a href="#">Astronomi & Kosmologi</a>
+                <a href="#">Fisika Kuantum</a>
+                <a href="#">Meditasi & Kesadaran</a>
+                <a href="#">Energi & Penyembuhan</a>
+                <a href="#">Filsafat & Spiritualitas</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <a href="mailto:info@dunia.com">info@dunia.com</a>
+                <a href="#">Bergabung dengan Komunitas</a>
+                <a href="#">Kirim Artikel</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Dunia. Semua hak dilindungi. | Dibuat dengan ❤️ untuk eksplorasi pengetahuan
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Create stars for background
+        function createStars() {
+            const heroSection = document.querySelector('.hero');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random position
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                // Random size
+                const size = Math.random() * 3;
+                
+                // Random animation delay
+                const delay = Math.random() * 5;
+                
+                star.style.left = `${left}%`;
+                star.style.top = `${top}%`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.animationDelay = `${delay}s`;
+                
+                heroSection.appendChild(star);
+            }
+        }
+        
+        // Initialize stars when page loads
+        window.addEventListener('load', createStars);
+    </script>
+</body>
+</html>
